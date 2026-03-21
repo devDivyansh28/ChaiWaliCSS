@@ -1,80 +1,13 @@
+import  properties  from "./customProperty.js";
+
 const targets = document.body.querySelectorAll("*");
-// console.log(targets)
 
-const properties = {
-  /****Margin****/
-  m: "margin",
-  mt: "margin-top",
-  mb: "margin-bottom",
-  ml: "margin-left",
-  mr: "margin-right",
-
-  clr: "color",
-
-  /****Padding****/
-  p: "padding",
-  pt: "padding-top",
-  pb: "padding-bottom",
-  pl: "padding-left",
-  pr: "padding-right",
-
-  /****background****/
-  bg: "background-color",
-  // opacity : "opacity",
-  bgImg: "background-image",
-
-  /****border****/
-  // border : "border",
-  brdStyle: "border-style",
-  brdWidth: "border-width",
-  brdClr: "border-color",
-  brdRadius: "border-radius",
-
-  boxSizing: "box-sizing",
-
-  minWidth: "min-width",
-  maxWidth: "max-width",
-  minHeight: "min-height",
-  maxHeight: "max-height",
-
-  /****outline****/
-  outlineStyle: "outline-style",
-  outlineClr: "outline-color",
-  outlineWidth: "outline-width",
-
-  /****text****/
-  textAlign: "text-align",
-  verticalAlign: "vertical-align",
-  textDecorationLine: "text-decoration-line",
-  textDecorationColor: "text-decoration-color",
-  textDecorationStyle: "text-decoration-style",
-  textTransform: "text-transform",
-  textSpacing: "text-spacing",
-  textShadow: "text-shadow",
-
-  /* ****Fonts**** */
-
-  fontStyle: "font-style",
-  fontSize: "font-size",
-  fontVariant: "font-variant",
-  fontWeight: "font-weight",
-  fontStretch: "font-stretch",
-};
 
 function classParser(cls) {
-  // const chaiclass = cls.trim().split("-");
+  const chaiclass = cls.trim().split("-");
   // console.log(chaiclass);
-  // let [_, property, ...value] = chaiclass;
-  // let raw = cls.slice(5)
-  // console.log(raw)
-  // let firstDash = raw.indexOf("-")
-  // let property = raw.slice(0,firstDash)
-  // let value = raw.slice(firstDash+1)
-  // let parsedValue = value.split("-").join(" ")
-
-  // console.log(property , parsedValue)
-
-  return { property, parsedValue };
+  let [_, property, ...value] = chaiclass;
+  return { property, value };
 }
 
 targets.forEach((target) => {
@@ -82,14 +15,10 @@ targets.forEach((target) => {
     if (cls.startsWith("chai-")) {
       const { property, value } = classParser(cls);
       console.log(property);
-      console.log(value);
+      console.log(value.join(" "));
 
       target.style[properties[property] || property] = value;
 
-      // console.log(chaiclass , property , value)
-      // console.log(`${properties[property]}:${value}`);
-
-      // target.setAttribute("style",`${properties[property]}: ${value}`) This is overriding old styles okk
     }
   });
 });
