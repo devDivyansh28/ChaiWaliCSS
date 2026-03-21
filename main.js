@@ -49,17 +49,16 @@ const properties = {
   textDecorationColor: "text-decoration-color",
   textDecorationStyle: "text-decoration-style",
   textTransform: "text-transform",
-  textSpacing : "text-spacing",
-  textShadow : "text-shadow",
-  
+  textSpacing: "text-spacing",
+  textShadow: "text-shadow",
+
   /* ****Fonts**** */
 
-  fontStyle : "font-style",
-  fontSize : "font-size",
-  fontVariant : "font-variant",
-  fontWeight : "font-weight",
-  fontStretch : "font-stretch",
-
+  fontStyle: "font-style",
+  fontSize: "font-size",
+  fontVariant: "font-variant",
+  fontWeight: "font-weight",
+  fontStretch: "font-stretch",
 };
 
 function classParser(cls) {
@@ -72,23 +71,21 @@ function classParser(cls) {
   // let property = raw.slice(0,firstDash)
   // let value = raw.slice(firstDash+1)
   // let parsedValue = value.split("-").join(" ")
- 
+
   // console.log(property , parsedValue)
 
-  return {property , parsedValue}
-
+  return { property, parsedValue };
 }
 
 targets.forEach((target) => {
   target.classList.forEach((cls) => {
     if (cls.startsWith("chai-")) {
-      
-      const {property , value} = classParser(cls)
+      const { property, value } = classParser(cls);
       console.log(property);
-      console.log(value)
-      
+      console.log(value);
+
       target.style[properties[property] || property] = value;
-     
+
       // console.log(chaiclass , property , value)
       // console.log(`${properties[property]}:${value}`);
 
