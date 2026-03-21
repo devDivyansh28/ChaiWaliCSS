@@ -62,20 +62,34 @@ const properties = {
 
 };
 
+function classParser(cls) {
+  // const chaiclass = cls.trim().split("-");
+  // console.log(chaiclass);
+  // let [_, property, ...value] = chaiclass;
+  // let raw = cls.slice(5)
+  // console.log(raw)
+  // let firstDash = raw.indexOf("-")
+  // let property = raw.slice(0,firstDash)
+  // let value = raw.slice(firstDash+1)
+  // let parsedValue = value.split("-").join(" ")
+ 
+  // console.log(property , parsedValue)
+
+  return {property , parsedValue}
+
+}
 
 targets.forEach((target) => {
   target.classList.forEach((cls) => {
-    if (cls.startsWith("do-")) {
-      const toDo = cls.trim().split("-");
-      console.log(toDo);
-      let [_, property, ...value] = toDo;
+    if (cls.startsWith("chai-")) {
       
+      const {property , value} = classParser(cls)
       console.log(property);
-      console.log(value.join(" "));
+      console.log(value)
       
-      target.style[properties[property] || property] = Array.isArray(value) ? value.join(" ") : value;
+      target.style[properties[property] || property] = value;
      
-      // console.log(doit , property , value)
+      // console.log(chaiclass , property , value)
       // console.log(`${properties[property]}:${value}`);
 
       // target.setAttribute("style",`${properties[property]}: ${value}`) This is overriding old styles okk
