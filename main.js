@@ -60,33 +60,25 @@ const properties = {
   fontWeight : "font-weight",
   fontStretch : "font-stretch",
 
-
-
-
-
-
 };
 
-const toAddPx = ["margin", "padding"];
+
 targets.forEach((target) => {
   target.classList.forEach((cls) => {
     if (cls.startsWith("do-")) {
       const toDo = cls.trim().split("-");
       console.log(toDo);
       let [_, property, ...value] = toDo;
-      // if( toAddPx.includes(properties[property])){
-      //     value = value+"px"
-      // }
+      
       console.log(property);
       console.log(value.join(" "));
+      
+      target.style[properties[property] || property] = Array.isArray(value) ? value.join(" ") : value;
+     
       // console.log(doit , property , value)
       // console.log(`${properties[property]}:${value}`);
 
       // target.setAttribute("style",`${properties[property]}: ${value}`) This is overriding old styles okk
-
-      target.style[properties[property] || property] = Array.isArray(value)
-        ? value.join(" ")
-        : value;
     }
   });
 });
