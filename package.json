@@ -3,7 +3,7 @@
   "version": "2.0.1",
   "type": "module",
   "description": "\"This is lightweight utility-first CSS engine using JavaScript.\"",
-  "main": "index.js",
+  "main": "applychai.js",
   "scripts": {
     "test": "npm test chai"
   },
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/devDivyansh28/ChaiWaliCSS/issues"
   },
-  "homepage": "https://github.com/devDivyansh28/ChaiWaliCSS#readme"
+  "homepage": "https://github.com/devDivyansh28/ChaiWaliCSS#readme",
+  "dependencies": {
+    "chaiwalicss": "^2.0.1"
+  }
 }

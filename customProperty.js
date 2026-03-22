@@ -88,34 +88,34 @@ const properties = {
   flexFlow: "flex-flow",
   /******** FLEX & GRID ALIGNMENT ********/
 
-  jc: "justify-content", 
-  ai: "align-items", 
+  jc: "justify-content",
+  ai: "align-items",
   ac: "align-content",
-  as: "align-self", 
-  pi: "place-items", 
+  as: "align-self",
+  pi: "place-items",
   pc: "place-content",
 
   gap: "gap",
-  gapX: "column-gap",
-  gapY: "row-gap",
+  columnGap: "column-gap",
+  rowGap: "row-gap",
 
   /******** FLEX ITEM CONTROL ********/
 
   flex: "flex",
-  grow: "flex-grow",
-  shrink: "flex-shrink",
-  basis: "flex-basis",
+  flexGrow: "flex-grow",
+  flexShrink: "flex-shrink",
+  flexBasis: "flex-basis",
   order: "order",
 
   /******** GRID ********/
 
-  cols: "grid-template-columns",
-  rows: "grid-template-rows",
-  area: "grid-area",
+  gridTemplateCols: "grid-template-columns",
+  gridTemplateRows: "grid-template-rows",
+  gridArea: "grid-area",
 
-  autoCols: "grid-auto-columns",
-  autoRows: "grid-auto-rows",
-  autoFlow: "grid-auto-flow",
+  gridAutoCols: "grid-auto-columns",
+  gridAutoRows: "grid-auto-rows",
+  gridAutoFlow: "grid-auto-flow",
 
   /******** POSITION ********/
   pos: "position",
@@ -127,7 +127,7 @@ const properties = {
   /******** IMAGE ********/
   objectFit: "object-fit",
   objectPosition: "object-position",
-  aspect: "aspect-ratio",
+  aspectRatio: "aspect-ratio",
 
   /******** IMAGE SPRITES ********/
   sprite: "background-image",
@@ -143,6 +143,6 @@ const properties = {
   /******** COUNTERS ********/
   counterReset: "counter-reset",
   counterIncrement: "counter-increment",
-} ;
+}; ;
 
 export default properties;
