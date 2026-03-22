@@ -4,8 +4,8 @@ const targets = document.body.querySelectorAll("*");
 
 
 function classParser(cls) {
+
   const chaiclass = cls.trim().split("-");
-  // console.log(chaiclass);
   let [_, property, ...value] = chaiclass;
   return { property, value };
 }
@@ -14,10 +14,9 @@ targets.forEach((target) => {
   target.classList.forEach((cls) => {
     if (cls.startsWith("chai-")) {
       const { property, value } = classParser(cls);
-      console.log(property);
-      console.log(value.join(" "));
-
-      target.style[properties[property] || property] = value;
+      console.log(value)
+      console.log(value.join(" "))
+      target.style[properties[property] || property] = Array.isArray(value) ? value.join(" ") : value;
 
     }
   });
@@ -40,7 +39,7 @@ targets.forEach((target) => {
 /* Improvement's i need to do in this project are 
 first i should implement to use rgb(0, 0, 255) currently unable to do so due to blank space separation " "
 
-2. I need to work on fonts class as it is not able to implement right now
+2. I need to work on fonts class as it is not able to implement right now ✅ 
 
 3. Need to implant logic for handling element states like : 
 The four link states are:

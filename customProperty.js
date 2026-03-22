@@ -143,6 +143,6 @@ const properties = {
   /******** COUNTERS ********/
   counterReset: "counter-reset",
   counterIncrement: "counter-increment",
-};
+} ;
 
 export default properties;
