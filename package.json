@@ -1,5 +1,5 @@
 {
-  "name": "chaiWaliCSS",
+  "name": "chaiwalicss",
   "version": "1.0.0",
   "description": "\"This is lightweight utility-first CSS engine using JavaScript.\"",
   "main": "index.js",
