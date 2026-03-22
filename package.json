@@ -1,6 +1,6 @@
 {
   "name": "chaiwalicss",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "type": "module",
   "description": "\"This is lightweight utility-first CSS engine using JavaScript.\"",
   "main": "index.js",
