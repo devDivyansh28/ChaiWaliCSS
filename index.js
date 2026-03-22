@@ -1,8 +1,7 @@
 import  properties  from "./customProperty.js";
 
 
-
-function addChaiWaliCss() {
+(function addChaiWaliCss(){
   const targets = document.body.querySelectorAll("*");
 
   function classParser(cls) {
@@ -23,9 +22,16 @@ function addChaiWaliCss() {
       }
     });
   });
-}
+}());
 
-export default addChaiWaliCss;
+
+
+
+
+
+
+
+
 // *******Basic POC i have applied but it will give only direct child*********
 // const elements = document.body.childNodes
 
