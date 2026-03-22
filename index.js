@@ -1,27 +1,31 @@
 import  properties  from "./customProperty.js";
 
-const targets = document.body.querySelectorAll("*");
 
 
-function classParser(cls) {
+function addChaiWaliCss() {
+  const targets = document.body.querySelectorAll("*");
 
-  const chaiclass = cls.trim().split("-");
-  let [_, property, ...value] = chaiclass;
-  return { property, value };
+  function classParser(cls) {
+    const chaiclass = cls.trim().split("-");
+    let [_, property, ...value] = chaiclass;
+    return { property, value };
+  }
+
+  targets.forEach((target) => {
+    target.classList.forEach((cls) => {
+      if (cls.startsWith("chai-")) {
+        const { property, value } = classParser(cls);
+        console.log(value);
+        console.log(value.join(" "));
+        target.style[properties[property] || property] = Array.isArray(value)
+          ? value.join(" ")
+          : value;
+      }
+    });
+  });
 }
 
-targets.forEach((target) => {
-  target.classList.forEach((cls) => {
-    if (cls.startsWith("chai-")) {
-      const { property, value } = classParser(cls);
-      console.log(value)
-      console.log(value.join(" "))
-      target.style[properties[property] || property] = Array.isArray(value) ? value.join(" ") : value;
-
-    }
-  });
-});
-
+export default addChaiWaliCss;
 // *******Basic POC i have applied but it will give only direct child*********
 // const elements = document.body.childNodes
 

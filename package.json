@@ -1,20 +1,22 @@
 {
-  "name": "chai-winder",
+  "name": "chaiWaliCSS",
   "version": "1.0.0",
-  "description": "\"Utility first CSS Engine\"",
-  "type": "module",
+  "description": "\"This is lightweight utility-first CSS engine using JavaScript.\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm test chai"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devDivyansh28/DoCSS.git"
+    "url": "git+https://github.com/devDivyansh28/ChaiWaliCSS.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "chai"
+  ],
+  "author": "Divyansh Sharma",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/devDivyansh28/DoCSS/issues"
+    "url": "https://github.com/devDivyansh28/ChaiWaliCSS/issues"
   },
-  "homepage": "https://github.com/devDivyansh28/DoCSS#readme"
+  "homepage": "https://github.com/devDivyansh28/ChaiWaliCSS#readme"
 }
